@@ -1,0 +1,15 @@
+1713202580366	Rename compilation unit 'Documents.java'
+1713207144180	Rename package 'com.poduct.category.documents'
+1713208338769	Delete element
+1713272515925	Move compilation unit
+1713272543889	Delete element
+1713272547754	Delete element
+1713272599517	Rename package 'com.poduct.category.entity.product.exception'
+1713272639548	Delete element
+1713273059344	Rename type 'ExceptionHandler'
+1713275741774	Rename type 'ProductAlreadyExists'
+1713287403216	Extract method 'extracted'
+1713289024006	Rename type 'EntityRequestDto'
+1713291258121	Extract method 'findId'
+1713374050761	Rename type 'ProductAlreadyExistsException'
+1713374509707	Rename type 'CategoryNotFound'

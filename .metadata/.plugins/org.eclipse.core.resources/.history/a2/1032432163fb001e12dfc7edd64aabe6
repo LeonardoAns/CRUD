@@ -1,0 +1,5 @@
+package com.poduct.category.entityDto;
+
+public record ProductResponseDto(Long id, String name, String description, Double price, Integer quantity) {
+
+}

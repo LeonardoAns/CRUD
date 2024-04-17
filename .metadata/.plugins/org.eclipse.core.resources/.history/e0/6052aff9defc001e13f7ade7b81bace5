@@ -1,0 +1,10 @@
+package com.poduct.category.entity.category.exception;
+
+public class CategoryNotFound extends RuntimeException{
+
+	private static final long serialVersionUID = 1L;
+	
+	public CategoryNotFound(String msg) {
+		super(msg);
+	}
+}

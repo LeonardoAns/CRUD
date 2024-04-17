@@ -1,0 +1,22 @@
+package com.poduct.category.configuration;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ControllerAdvice;
+
+import com.poduct.category.entity.product.exception.NotFoundProductException;
+
+import jakarta.servlet.http.HttpServletRequest;
+
+@ControllerAdvice
+public class ExceptionEntityHandler {
+	
+	@ExceptionEntityHandler(NotFoundProductException.class)
+	public ResponseEntity<ExceptionMessage> notFoundProduct(NotFoundProductException e, HttpServletRequest request){
+		return ResponseEntity
+				.status(HttpStatus.NOT_FOUND)
+				.contentType(MediaType.APPLICATION_JSON)
+				.body(new ExceptionMessage(request,HttpStatus.NOT_FOUND,e.getMessage()));
+	}
+}

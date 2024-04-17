@@ -1,0 +1,5 @@
+package com.poduct.category.entity.product.exception;
+
+public class ProductAlreadyExists {
+
+}

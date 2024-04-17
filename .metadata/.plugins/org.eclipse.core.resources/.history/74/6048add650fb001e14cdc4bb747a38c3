@@ -1,0 +1,5 @@
+package com.poduct.category.service;
+
+public class ProductService {
+
+}

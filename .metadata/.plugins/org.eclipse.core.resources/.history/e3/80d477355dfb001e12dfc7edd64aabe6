@@ -1,0 +1,41 @@
+package com.poduct.category.service;
+
+import java.util.List;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.stereotype.Service;
+
+import com.poduct.category.entity.Product;
+import com.poduct.category.entityDto.ProductRequestDto;
+import com.poduct.category.entityDto.ProductResponseDto;
+import com.poduct.category.repository.ProductRepository;
+
+import lombok.RequiredArgsConstructor;
+
+@Service
+@RequiredArgsConstructor
+public class ProductService {
+
+	private final ProductRepository productRepository;
+	private final ModelMapper modelMapper;
+		
+	public ProductResponseDto insertProduct(ProductRequestDto productDto) {
+		Product product = modelMapper.map(productDto, Product.class);
+		product = this.productRepository.save(product);
+		
+		ProductResponseDto response = modelMapper.map(product, ProductResponseDto.class);
+		return response;
+	}
+	
+	public List<Product> findAllProducts(){
+		return this.productRepository.findAll();
+	}
+	
+	public Product findById(Long id) {
+		return this.productRepository.findById(id).orElseThrow(() -> new RuntimeException("Id não existe"));
+	}
+	
+	public void deleteProduct(Long id) {
+		 this.productRepository.deleteById(id);
+	}
+}
